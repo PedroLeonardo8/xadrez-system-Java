@@ -46,7 +46,7 @@ public class UI {
 		}
 
 		catch (RuntimeException e) {
-			throw new InputMismatchException("Erro lendo posições de xadrez(Valores válidos: a1-h8)");
+			throw new InputMismatchException("Erro lendo posicoes de xadrez(Valores validos: a1-h8)");
 		}
 	}
 	
@@ -57,6 +57,9 @@ public class UI {
 		System.out.println();
 		System.out.println("Turno: " + chessMatch.getTurn());
 		System.out.println("Aguardando o jogador: " + chessMatch.getCurrentPlayer());
+		if(chessMatch.getCheck()) {
+			System.out.println("Check!");
+		}
 	}
 
 	public static void printBoard(ChessPiece[][] pieces) {
