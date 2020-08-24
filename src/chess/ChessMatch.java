@@ -1,12 +1,9 @@
 package chess;
 
-import java.security.InvalidParameterException;
-import java.security.spec.InvalidParameterSpecException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.graalvm.compiler.hotspot.phases.aot.ReplaceConstantNodesPhase;
 
 import tabuleiro.Board;
 import tabuleiro.Piece;
@@ -125,7 +122,7 @@ public class ChessMatch {
 			throw new IllegalStateException("Nao ha peca para ser promovida");
 		}
 		if (!type.equals("B") && !type.equals("T") && !type.equals("C") && !type.equals("D")) {
-			throw new InvalidParameterException("Tipo de prmocao invalida");
+			return promoted;
 		}
 		Position pos = promoted.getChessPosition().toPosition();
 		Piece p = board.removePiece(pos);

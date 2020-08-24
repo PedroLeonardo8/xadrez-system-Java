@@ -41,7 +41,11 @@ public class Program {
 				
 				if(chessMatch.getPromoted()!=null) {
 					System.out.print("Qual peca voce escolhe?(D/B/C/T)");
-					String type = sc.nextLine();
+					String type = sc.nextLine().toUpperCase();
+					while (!type.equals("B") && !type.equals("T") && !type.equals("C") && !type.equals("D")) {
+						System.out.print("Peca invalida! Digite novamente. Qual peca voce escolhe?(D/B/C/T)");
+						type = sc.nextLine().toUpperCase();
+					}
 					chessMatch.replacePromotedPiece(type);
 				}
 			}
